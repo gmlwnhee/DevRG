@@ -25,7 +25,7 @@ public class InfoCollector extends fileUtil {
             }
             preconvFileContents += line + "\n";
         }
-        Print.print(preconvFileContents);
+        Print.print("PRECONVERTER DONE",preconvFileContents);
         enumCollector(preconvFileContents);
         variableCollector(preconvFileContents);
     }
