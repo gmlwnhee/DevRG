@@ -3,6 +3,10 @@ package kr.inhatc.spring.engine;
 import java.util.*;
 
 public class test {
+    /**
+    * @author : 정지석
+    * @description : 테스트 클래스
+    **/
     public static void main(String[] args) {
         InfoCollector infoCollector = new InfoCollector(System.getProperty("user.home"), "\\testCode.java");
         ArrayList<String> classCollection = InfoCollector.classCollector(InfoCollector.preconvFileContents);

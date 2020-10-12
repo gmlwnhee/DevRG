@@ -6,6 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class fileUtil {
+    /**
+    * @author : 정지석
+    * @description : 파일 가져오는 클래스
+    **/
     private String path;
     private String name;
     public static String fileContents;

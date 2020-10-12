@@ -1,6 +1,10 @@
 package kr.inhatc.spring.engine;
 
 public class SeparatorCalc {
+    /**
+    * @author : 정지석
+    * @description : { } 개수를 파악하여 클래스, 함수 전체를 가져오는 클래스
+    **/
     public static String calc(String fileContents, String target) {
         int startCount = 0;
         int endCount = 0;

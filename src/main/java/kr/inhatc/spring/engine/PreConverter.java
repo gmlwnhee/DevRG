@@ -5,7 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PreConverter {
-    // //<-삭제
+    /**
+    * @author : 정지석
+    * @description : 주석, String 제거 preconverter 클래스
+    **/
     public static boolean annotationFlag = false;
     public static int StringNum = 0;
     public static int charNum = 0;

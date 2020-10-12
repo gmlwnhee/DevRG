@@ -5,6 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class InfoCollector extends fileUtil {
+    /**
+    * @author : 정지석
+    * @description : 파일에 있는 정보 추출 클래스
+    **/
     public enum CollectorFlag {
         VARIABLE, OTHERS
     }
@@ -16,9 +20,11 @@ public class InfoCollector extends fileUtil {
     public static final String REGEX_VARIABLE = "(\\w*\\s*)(\\[.*\\])?(<.*>)?\\s+\\w+\\s*[^+\\-/*](=(\\s*\\S+.*)?[^{])?;";
     public static String preconvFileContents = "";
 
+
     public InfoCollector(String path, String name) {
         super(path, name);
         for (String line : readFile().split("\n")) {
+            // String, 주석 제거 컨버터
             line = PreConverter.preconverter(line);
             if (PreConverter.annotationFlag == true) {
                 continue;
@@ -29,7 +35,6 @@ public class InfoCollector extends fileUtil {
         enumCollector(preconvFileContents);
         variableCollector(preconvFileContents);
     }
-
     public static ArrayList<String> classCollector(String preconvFileContents) {
         ArrayList<String> classList = getPatternMatch(preconvFileContents, REGEX_CLASS, CollectorFlag.OTHERS);
         System.out.println(classList);
@@ -53,7 +58,7 @@ public class InfoCollector extends fileUtil {
         System.out.println(variableList);
         return variableList;
     }
-
+    // 패턴 매치 함수
     public static ArrayList<String> getPatternMatch(String fileContents, String regex, CollectorFlag FLAG) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fileContents);
